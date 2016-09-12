@@ -26,7 +26,7 @@ procedure division.
     call "Stack" using by content "Pop", by reference Result
     call "AssertEquals" using Result, "hello", "Returned 1st value put on stack"
     call "Stack" using by content "Pop", by reference Result
-    call "AssertEquals" using Result, "", "Read past end of stack returns spaces"
+    call "AssertEquals" using Result, " ", "Read past end of stack returns spaces"
 
     move 35 to Item
     call "Stack" using by content "Push", by content Item

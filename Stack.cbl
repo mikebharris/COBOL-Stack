@@ -6,13 +6,11 @@ program-id. Stack.
 
 data division.
 working-storage section.
-
     01 StackTable is global.
         02 StackItem pic x(20) occurs 1 to 50 times.
     01 ItemsInStack pic 99 value zero is global.
 
 linkage section.
-
     01 Command pic x any length.
     01 Item pic x any length.
 

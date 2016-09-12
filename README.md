@@ -17,6 +17,8 @@ call "Stack" using by content "Pop", by reference Item
     
 ## Running the test using GnuCOBOL:
 
+To run the tests you'll also need to download and compile https://github.com/mikebharris/COBOL-Test-Suite - copy the resultant binary library file to the same directory as COBOL Stack to run.
+
 ```
 $ cobc --free Stack.cbl 
 $ cobc --free -x StackTest.cbl 

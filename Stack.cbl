@@ -17,24 +17,22 @@ linkage section.
 procedure division using Command, Item.
 
     evaluate function trim(Command)
-        when "Push" perform Push thru EndPush
-        when "Pop"  perform Pop thru EndPop
-        when "Peek" perform Peek thru EndPeek
+        when "Push" perform PushItemOntoStack thru EndPushItemOntoStack
+        when "Pop"  perform PopItemOffStack thru EndPopItemOffStack
+        when "Peek" perform PeekWhichItemIsOnTopOfStack thru EndPeekWhichItemIsOnTopOfStack
     end-evaluate
     goback.
 
-Push.
+PushItemOntoStack.
     add 1 to ItemsInStack
     move Item to StackItem(ItemsInStack).
-EndPush.
+EndPushItemOntoStack.
 
-Peek.
-    *> Return last item pushed onto stack without removing it
+PeekWhichItemIsOnTopOfStack.
     move StackItem(ItemsInStack) to Item.
-EndPeek.
+EndPeekWhichItemIsOnTopOfStack.
 
-Pop.
-    *> Return last item pushed onto stack and remove it
+PopItemOffStack.
     if ItemsInStack less than 1 then
         move spaces to Item
     else
@@ -42,6 +40,6 @@ Pop.
         move spaces to StackItem(ItemsInStack)
         subtract 1 from ItemsInStack
     end-if.
-EndPop.
+EndPopItemOffStack.
 
 end program Stack.

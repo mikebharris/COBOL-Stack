@@ -17,11 +17,10 @@ call "Stack" using by content "Pop", by reference Item
     
 ## Running the test using GnuCOBOL:
 
-To run the tests you'll also need to download and compile https://github.com/mikebharris/COBOL-Test-Suite - copy the resultant binary library file to the same directory as COBOL Stack to run.
+To run the tests you'll also need to download https://github.com/mikebharris/COBOL-Test-Suite and include it in the compilation:
 
 ```
-$ cobc --free Stack.cbl 
-$ cobc --free -x StackTest.cbl 
+$ cobc -free -x StackTest.cbl Stack.cbl path/to/COBOL-Test-Suite/AssertEquals.cbl
 $ ./StackTest 
 Passed: Returned 3rd value put on stack
 Passed: Returned 2nd value put on stack

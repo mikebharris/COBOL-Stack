@@ -7,12 +7,10 @@ environment division.
 
 data division.
 working-storage section.
-
-    01 Item pic x(10) value spaces.
-    01 Result pic x(10) value spaces.
+01 Item pic x(10) value spaces.
+01 Result pic x(10) value spaces.
 
 procedure division.
-
     move "hello" to Item
     call "Stack" using by content "Push", by content Item
     move "hola" to Item
